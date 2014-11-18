@@ -10,7 +10,32 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function() {
+
+  // setTimeout(function() {
+  //   // console.log($('.flexslider').length);
+
+
+  //   var options = {
+  //     animation: "slide",
+  //     directionNav: false,
+  //     controlNav: true,
+  //     slideshow: true,
+  //     animationDuration: 1000,
+  //     animationLoop: false
+  //     // start: function(d) {
+  //       // $("#footer-content a.readmore").bind("click", function() {
+  //       //   d.flexAnimate(d.getTarget("next"))
+  //       // })
+  //     // }
+  //   };
+
+  //   $('.flexslider').flexslider(options);
+
+  // }, 0);
+
+}());
