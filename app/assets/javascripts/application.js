@@ -16,6 +16,18 @@
 
 $(function() {
 
+
+
+  $(window).on('scroll',function(){
+    var scrollTop = $(window).scrollTop();
+    // console.log(scrollTop);
+    if (scrollTop > 315 - 30){
+      $('#header').addClass('mini');
+    } else {
+      $('#header').removeClass('mini');
+    }
+  })
+
   // setTimeout(function() {
   //   // console.log($('.flexslider').length);
 
