@@ -11,18 +11,39 @@
 $height: 30px;
 $speed: 0.25s;
 
+.logo-reference{
+    width: 100px;
+    height: 100px;
+}
+
+
+ul.reference{
+    li{
+        display: inline-block;
+    }
+    li.reference-name{
+        width:300px;
+        text-align: center;
+    }
+}
+
+ul.resp-list{
+    margin:0;
+    padding: 0;
+    display: table;
+    li{
+        display: table-cell;
+    }
+}
 
 
 #header{
-    // @include transition($speed);    
     position: absolute;
     top:0;
     left:0; 
     width:100%;
 
-}
-
-#header.mini{
+    &.mini{
     height: $height;
     line-height: $height;
     padding: 0;
@@ -55,6 +76,8 @@ $speed: 0.25s;
         right: 10px; 
 
     }
+    }
+
 }
 
 div.surfy-bottom{
@@ -132,12 +155,31 @@ table{
   }
 }
 
+
+@media screen and (min-width: 240px) and (max-width: 1023px) {
+ul.resp-list{
+    display: block;
+    li{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+ul.reference{
+        li.reference-name{
+        width:100%;
+    }
+
+}
+
+}
+
+
+
 @media screen and (min-width: 640px) and (max-width: 1023px) {
     ul.slides {
         li {
-            img {
-                margin-left: -50%;
-            }
             div.text {
                 width: 100%;
             }
@@ -166,16 +208,9 @@ table{
         text-align: center;
         li {
             text-align: center;
-            // display: block;
 
-            & > img {
-                // display: none;
-                margin-left: -100%;
-            }
             div.text {
                 width: 100%;
-                // font-size: 22px;
-                // position: relative;
             }
         }
     }
