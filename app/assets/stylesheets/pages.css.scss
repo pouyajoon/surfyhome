@@ -11,21 +11,6 @@
 $height: 30px;
 $speed: 0.25s;
 
-.logo-reference{
-    width: 100px;
-    height: 100px;
-}
-
-
-ul.reference{
-    li{
-        display: inline-block;
-    }
-    li.reference-name{
-        width:300px;
-        text-align: center;
-    }
-}
 
 ul.resp-list{
     margin:0;
@@ -128,23 +113,10 @@ ul.slides {
             @include transition(0.5s);
             background-color: rgba(255, 255, 255, 0.5);
             width: 100%;
-            // padding: 0 10px;
             text-align: left;
-            // position: absolute;
-            // z-index: 1;
-            // top: 0;
-            // left: 0;
-            // font-size: 26px;
-            // height: 100%;
         }
         div.white {
             color: white;
-        }
-        img {
-            @include transition(0.5s);
-            opacity: 0.5;
-        }
-        div.text{
         }
     }
 }
