@@ -46,7 +46,6 @@ ul.resp-list {
             left: 0;
             height: 30px;
         }
-
         p.description {
             display: none;
         }
@@ -135,8 +134,14 @@ table {
             width: 100%;
         }
     }
-    body{
+    body {
         padding-top: 340px;
+    }
+    #header {
+        .logo-top {
+            width: 250px;
+            margin-bottom: 10px;
+        }
     }
 }
 
