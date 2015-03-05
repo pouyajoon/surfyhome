@@ -11,71 +11,67 @@
 $height: 30px;
 $speed: 0.25s;
 
-
-ul.resp-list{
-    margin:0;
+ul.resp-list {
+    margin: 0;
     padding: 0;
     display: table;
-    li{
+    li {
         display: table-cell;
     }
 }
 
-
-#header{
+#header {
     position: absolute;
-    top:0;
-    left:0; 
-    width:100%;
-
-    &.mini{
-    height: $height;
-    line-height: $height;
-    padding: 0;
-    margin:0;
-    vertical-align: middle;
-    position:fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: rgba(238, 238, 238, 0.8);
-    h1{
-        float: left;
-        font-size: 12px;
-        margin:0;
-        padding:0;
+    &.mini {
+        height: $height;
         line-height: $height;
-        margin: 0 10px;
-        position: absolute;
-        top:0;
-        left:0; 
-    }
+        padding: 0;
+        margin: 0;
+        vertical-align: middle;
+        position: fixed;
+        width: 100%;
+        background-color: rgba(238, 238, 238, 0.8);
+        .logo-top {
+            float: left;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            line-height: $height;
+            margin: 0 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 30px;
+        }
 
-    p.description{
-        display: none;
+        p.description {
+            display: none;
+        }
+        p.contact {
+            float: right;
+            font-size: 12px;
+            margin: 0 10px;
+            position: absolute;
+            top: 0;
+            right: 10px;
+        }
     }
-    p.contact{
-        float: right;
-        font-size: 12px;
-        margin: 0 10px;
-        position: absolute;        
-        top:0;
-        right: 10px; 
-
-    }
-    }
-
 }
 
-div.surfy-bottom{
-    margin:10px;
+div.surfy-bottom {
+    margin: 10px;
 }
 
 // div.text, div.content{
 //   display: none;
 // }
 
-.jumbotron{
-  margin-bottom: 0;
-  // padding-bottom: 0;
+.jumbotron {
+    margin-bottom: 0;
+    // padding-bottom: 0;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
@@ -84,8 +80,8 @@ body {
     text-align: center;
     margin: 0;
     font-family: Oxygen, Arial;
-    font-size: 14px;  
-    padding-top: 315px;
+    font-size: 14px;
+    padding-top: 340px;
 }
 
 // .bottom{
@@ -95,19 +91,17 @@ body {
 ul.slides {
     margin: 0;
     padding: 0;
-
-    & > li{
-        border-bottom:4px solid #eee;
+    & > li {
+        border-bottom: 4px solid #eee;
     }
     li {
         // position: relative;
         z-index: 0;
         padding: 0;
         margin: 0;
-
-        div.content{
-          padding-top: 10px;
-          margin: 10px;
+        div.content {
+            padding-top: 10px;
+            margin: 10px;
         }
         div.text {
             @include transition(0.5s);
@@ -121,33 +115,27 @@ ul.slides {
     }
 }
 
-table{
-  th, td{
-    text-align: center;
-  }
-}
-
-
-@media screen and (min-width: 240px) and (max-width: 1023px) {
-ul.resp-list{
-    display: block;
-    li{
-        display: block;
-        width: 100%;
+table {
+    th, td {
         text-align: center;
     }
 }
 
-ul.reference{
-        li.reference-name{
-        width:100%;
+@media screen and (min-width: 240px) and (max-width: 1023px) {
+    ul.resp-list {
+        display: block;
+        li {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
     }
-
+    ul.reference {
+        li.reference-name {
+            width: 100%;
+        }
+    }
 }
-
-}
-
-
 
 @media screen and (min-width: 640px) and (max-width: 1023px) {
     ul.slides {
@@ -160,27 +148,23 @@ ul.reference{
 }
 
 @media screen and (min-width: 240px) and (max-width: 639px) {
-
-  table.price{
-    th:nth-child(2), td:nth-child(2){
-      display: none;
-      @include transition(0.5s);
+    table.price {
+        th:nth-child(2), td:nth-child(2) {
+            display: none;
+            @include transition(0.5s);
+        }
     }
-  }
-
-    ul{
+    ul {
         margin: 0;
         padding: 0;
     }
-    h2, h3{
+    h2, h3 {
         text-align: center;
     }
-
     ul.slides {
         text-align: center;
         li {
             text-align: center;
-
             div.text {
                 width: 100%;
             }
