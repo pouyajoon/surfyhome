@@ -81,7 +81,7 @@ body {
     margin: 0;
     font-family: Oxygen, Arial;
     font-size: 14px;
-    padding-top: 340px;
+    padding-top: 300px;
 }
 
 // .bottom{
@@ -134,6 +134,9 @@ table {
         li.reference-name {
             width: 100%;
         }
+    }
+    body{
+        padding-top: 340px;
     }
 }
 
