@@ -14,19 +14,68 @@
 //= require_tree .
 
 
+/*global $*/
 $(function() {
+  'use strict';
 
 
-
-  $(window).on('scroll',function(){
-    var scrollTop = $(window).scrollTop();
-    // console.log(scrollTop);
-    if (scrollTop > 315 - 30){
-      $('#header').addClass('mini');
-    } else {
-      $('#header').removeClass('mini');
+  function registerScrollTop(scrollTop, id, animation, offset) {
+    if (offset === undefined) {
+      offset = 100;
     }
-  })
+    var $e = $('#' + id);
+    console.log(id, $e.length);
+    if ($e.length > 0 && !$e.hasClass('animated') && scrollTop + $(window).height() - offset >= $e.offset().top) {
+      $e.addClass('animated ' + animation);
+      $e.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+        $e.find('ul:first > li').each(function(i, li) {
+          setTimeout(function() {
+            $(li).addClass('animated slideInLeft');
+          }, i * 250);
+        });
+        $e.find('tr').each(function(i, li) {
+          setTimeout(function() {
+            $(li).addClass('animated flipInX');
+          }, i * 250);
+        });
+      });
+    }
+  }
+
+
+  function handleScroll() {
+    var scrollTop = $(window).scrollTop();
+
+    console.log('handleScroll', scrollTop);
+    if (scrollTop > 40) {
+      $('#menu_top_mini').addClass('move');
+    } else {
+      $('#menu_top_mini').removeClass('move');
+    }
+
+    registerScrollTop(scrollTop, 'surfy-how-help', 'bounceInLeft');
+    registerScrollTop(scrollTop, 'security', 'bounceInLeft');
+    registerScrollTop(scrollTop, 'references', 'bounceInLeft');
+
+
+    registerScrollTop(scrollTop, 'optimize', 'fadeIn', 0);
+    registerScrollTop(scrollTop, 'master-cost', 'bounceInLeft');
+    registerScrollTop(scrollTop, 'decide', 'bounceInRight');
+    registerScrollTop(scrollTop, 'simple-ui', 'bounceInLeft');
+
+
+    registerScrollTop(scrollTop, 'services', 'fadeIn', 0);
+    registerScrollTop(scrollTop, 'university', 'bounceInLeft');
+
+    registerScrollTop(scrollTop, 'prices', 'fadeIn', 0);
+
+registerScrollTop(scrollTop, 'contact', 'fadeIn', 0);
+
+  }
+
+  $(window).on('load', handleScroll);
+  $(window).on('page:load', handleScroll);
+  $(window).on('scroll', handleScroll);
 
   // setTimeout(function() {
   //   // console.log($('.flexslider').length);

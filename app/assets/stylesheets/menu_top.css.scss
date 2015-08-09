@@ -1,0 +1,105 @@
+@import "mixins";
+
+$mainColor: #FF4854;
+
+#menu_top, #menu_top_mini {
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1000;
+    ul {
+        margin: 0;
+        padding: 0;
+        display: table;
+        width: 100%;
+        li {
+            display: table-cell;
+            &:not(:first-child){
+                width: 150px;
+            }
+            &:first-child{
+                text-align: left;
+            }
+            img.logo-top {
+                @include transition(0.5s);
+                width: 150px;
+                margin-left: 10px;
+            }
+            vertical-align: middle;
+            a {
+                @include transition(0.5s);
+                font-size: 24px;
+                color: black;
+                font-weight: bold;
+                    width: 100%;
+                    display: block;
+                    height: 100%;
+
+                &:hover {
+                    color: $mainColor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    @include transition(0.5s);
+}
+
+#menu_top_mini {
+    @include transition(0.5s);
+    padding: 5px 0;
+    position: fixed;
+    top: -90px;
+    background-color: rgba(255, 255, 255, 0.90);
+    ul {
+        li {
+            img.logo-top {
+                width: 100px;
+            }
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+    &.move {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    div#menu_top_mini, div#menu_top{
+        padding: 10px 0;
+        ul{
+            li{
+                width: 100px;
+                img.logo-top{
+                    width:100px;
+                }
+                a{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: 240px) and (max-width: 768px) {
+
+    div#menu_top_mini, div#menu_top{
+        padding: 5px 0;
+        ul{
+            li{
+                width: 80px;
+                img.logo-top{
+                    width:80px;
+                }
+                a{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

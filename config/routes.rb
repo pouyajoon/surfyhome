@@ -7,6 +7,12 @@ Surfyphome::Application.routes.draw do
   # root 'welcome#index'
   root 'pages#home'
 
+
+  get 'solutions' => 'pages#solutions'
+  get 'services' => 'pages#services'
+  get 'prices' => 'pages#prices'
+  get 'contact' => 'pages#contact'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

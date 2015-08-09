@@ -1,12 +1,8 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@mixin transition($speed) {
-    -o-transition: all $speed ease-out;
-    -moz-transition: all $speed ease-out;
-    -webkit-transition: all $speed ease-out;
-    transition: all $speed ease-out;
-}
+
+@import "mixins";
 
 $height: 30px;
 $speed: 0.25s;
@@ -14,17 +10,26 @@ $speed: 0.25s;
 ul.resp-list {
     margin: 0;
     padding: 0;
+    width: 100%;
     display: table;
     li {
         display: table-cell;
+        &.reference-person {
+            width: 200px;
+            text-align: center;
+            padding: 0 10px;
+        }
+        &.reference-name {
+            padding: 0 10px;
+        }
     }
 }
 
 #header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
     &.mini {
         height: $height;
         line-height: $height;
@@ -37,10 +42,9 @@ ul.resp-list {
         .logo-top {
             float: left;
             font-size: 12px;
-            margin: 0;
             padding: 0;
             line-height: $height;
-            margin: 0 10px;
+            margin: 0 20px;
             position: absolute;
             top: 0;
             left: 0;
@@ -62,6 +66,16 @@ ul.resp-list {
     }
 }
 
+#contact{
+ p.email{
+    text-align: center;
+    margin:20px;
+    a{
+        font-size: 28px;
+    }
+ }   
+}
+
 div.surfy-bottom {
     margin: 10px;
 }
@@ -70,9 +84,20 @@ div.surfy-bottom {
 //   display: none;
 // }
 
+.home-text {
+    p {
+        padding-left: 20px;
+    }
+}
+
 .jumbotron {
     margin-bottom: 0;
     // padding-bottom: 0;
+    padding: 90px 0;
+    img.logo-top{
+        margin-bottom: 20px;
+    }
+
 }
 
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
@@ -82,7 +107,7 @@ body {
     margin: 0;
     font-family: Oxygen, Arial;
     font-size: 14px;
-    padding-top: 300px;
+    // padding-top: 300px;
 }
 
 // .bottom{
@@ -94,6 +119,10 @@ ul.slides {
     padding: 0;
     & > li {
         border-bottom: 4px solid #eee;
+        opacity: 0;
+        &.animated {
+            opacity: 1;
+        }
     }
     li {
         // position: relative;
@@ -103,6 +132,12 @@ ul.slides {
         div.content {
             padding-top: 10px;
             margin: 10px;
+            & > ul  > li {
+                opacity: 0;
+                &.animated {
+                    opacity: 1;               
+                }
+            }
         }
         div.text {
             @include transition(0.5s);
@@ -122,6 +157,21 @@ table {
     }
 }
 
+table.price{
+    tr{
+        opacity: 0;
+        &.animated{
+            opacity: 1;
+        }
+    }
+}
+
+div.recomandation, div.home-text {
+    h2 {
+        margin-bottom: 10px;
+    }
+}
+
 @media screen and (min-width: 240px) and (max-width: 1023px) {
     ul.resp-list {
         display: block;
@@ -129,6 +179,9 @@ table {
             display: block;
             width: 100%;
             text-align: center;
+            &.reference-person {
+                width: 100%;
+            }
         }
     }
     ul.reference {
@@ -136,9 +189,9 @@ table {
             width: 100%;
         }
     }
-    body {
-        padding-top: 340px;
-    }
+    // body {
+    //     padding-top: 340px;
+    // }
     #header {
         .logo-top {
             width: 250px;
@@ -147,7 +200,7 @@ table {
     }
 }
 
-img.secure-cloud{
+img.secure-cloud {
     text-align: center;
 }
 
@@ -155,6 +208,9 @@ img.secure-cloud{
     h2 {
         padding: 30px 20px;
         margin: 0;
+    }
+    h3{
+        margin-bottom: 20px;
     }
 }
 
@@ -164,25 +220,27 @@ img.secure-cloud{
         color: white;
     }
 }
+
 .master-cost {
     h2 {
         background-color: #FF4854;
         color: white;
     }
 }
+
 .decide {
     h2 {
         background-color: #B4E02C;
         color: white;
     }
 }
+
 .simple-ui {
     h2 {
         background-color: #2C3130;
         color: white;
     }
 }
-
 
 @media screen and (min-width: 640px) and (max-width: 1023px) {
     ul.slides {
@@ -192,8 +250,6 @@ img.secure-cloud{
             }
         }
     }
-
-
 }
 
 @media screen and (min-width: 240px) and (max-width: 639px) {
@@ -219,7 +275,7 @@ img.secure-cloud{
             }
         }
     }
-    div.content{
+    div.content {
         text-align: center;
     }
 }
