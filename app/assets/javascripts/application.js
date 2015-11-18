@@ -24,7 +24,6 @@ $(function() {
       offset = 100;
     }
     var $e = $('#' + id);
-    console.log(id, $e.length);
     if ($e.length > 0 && !$e.hasClass('animated') && scrollTop + $(window).height() - offset >= $e.offset().top) {
       $e.addClass('animated ' + animation);
       $e.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
@@ -54,6 +53,7 @@ $(function() {
     }
 
     registerScrollTop(scrollTop, 'surfy-how-help', 'bounceInLeft');
+    registerScrollTop(scrollTop, 'video-presentation', 'fadeIn');
     registerScrollTop(scrollTop, 'security', 'bounceInLeft');
     registerScrollTop(scrollTop, 'references', 'bounceInLeft');
 
