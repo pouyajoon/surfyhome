@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.4'
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
@@ -41,6 +41,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 
 gem 'pg'
 # gem 'rack-zippy'
