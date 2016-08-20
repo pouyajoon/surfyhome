@@ -9,20 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require global
+ *= require nhome
+
  */
-/*
+
+/*  require_tree .  */
 
 
-
-.flex-control-nav{
-  bottom: 0;
-}
-
-
-.jumbotron{
-  padding: 8px 0;
-  margin-bottom: 0;
-}*/
 
 
