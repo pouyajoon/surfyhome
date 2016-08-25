@@ -23,6 +23,7 @@ $((function () {
             });
             // .addIndicators(); // add indicators (requires plugin)
             scene.on("enter", function () {
+                // $(zone + ' .zone-text h1').addClass('animated bounceInRight');
                 $(zone + ' .zone-end-text h2').addClass('animated bounceInLeft');
                 $(zone).addClass('doAnimation');
             });
@@ -36,7 +37,7 @@ $((function () {
         setSceen(4);
         setSceen(5);
         setSceen(6);
-        setSceen(7, -250);
+        setSceen(7, -400);
 
         // build scene
         // var scene = new ScrollMagic.Scene({
