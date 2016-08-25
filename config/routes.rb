@@ -15,6 +15,7 @@ Surfyphome::Application.routes.draw do
 
 
   get 'amp' => "amp_pages#home"
+  get 'new' => "pages#nhome"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

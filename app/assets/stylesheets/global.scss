@@ -1,0 +1,94 @@
+@import "_variables";
+
+.text-red{
+  color:$red;
+}
+
+.text-cyan{
+  color:$cyan;
+}
+
+
+.bg-red{
+  background-color: $red;
+  color:white;  
+}
+
+.bg-cyan{
+  background-color: $cyan;
+  color:white;  
+}
+
+.bg-green{
+  background-color: $green;
+  color:white;  
+}
+
+.bg-green-dark{
+  background-color: $green-dark;
+  color:white;  
+}
+
+
+.bg-red{
+  background-color: $red;
+  color:white;  
+}
+
+
+
+
+
+.circle{
+ padding: 5px;
+ border-radius: 30px;
+ width: 20px;
+ height: 20px;
+ line-height: 20px;
+ text-align: center;
+ display: inline-block;
+}
+.circle-red{
+  background-color: $red;
+  color:white;
+}
+.circle-cyan{
+  background-color: $cyan;
+  color:white;
+}
+.circle-green{
+  background-color: $green;
+  color:white;
+}
+
+div.half-circle{
+ height:77px;
+ width:40px;
+ min-width: 40px;
+ border-radius: 0 90px 90px 0;
+}
+
+div.half-circle-reverse{
+ height:77px;
+ width:40px;
+ min-width: 40px;
+ border-radius: 90px 0 0 90px;
+}
+
+
+div.half-circle-green{
+background-color: $green;
+}
+
+div.half-circle-cyan{
+background-color: $cyan;
+}
+
+div.half-circle-red{
+background-color: $red;
+}
+
+
+h1.right, h2.right{
+  text-align: right;
+}
