@@ -1,9 +1,20 @@
-
-
+@import 'https://fonts.googleapis.com/css?family=Roboto';
 @import "_variables";
+
 body{
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-area{
+  width: 1098px;
+  margin: 0 auto;
+  border:1px solid #efefef;
+}
+
+.header{
+  height: 52px;
 }
 .zone-full{
   width: 100%;
@@ -48,11 +59,11 @@ body{
   .zone-end{
     background-color: $green;
     color:white;
-    text-align: center;
-    padding: 30px;
+   
     h2{
       margin: 0;
     }
+
   }
   li:not(:last-child){
     margin-bottom: 10px;
@@ -68,12 +79,16 @@ body{
       align-items:flex-end;
       .zone-end{
         width: 100%;
+     display: flex;
+    justify-content:center;
+    .zone-end-text{
+      width: 400px;
+    }        
       }
     }
   }
   h2{
     margin: 0;
-    padding-left: 10px;
   }
   ul.title{
     margin-left: 0;
@@ -83,11 +98,14 @@ body{
       list-style: none;
       display: flex;
     }
+    h2{
+      margin-left: 10px;
+    }
   }
 }
 
 .zone-end{
-  padding: 30px;
+  padding: 30px 10px;
 
 }
 
@@ -100,17 +118,18 @@ body{
   .zone-action{
     background-color: white;
     position: relative;
-    width: 180px;
+    width: 40px;
   }
 
 
   img{
     width: 116px;
+    height: 116px;
     border: 16px solid white;
     border-radius: 78px;
     position: absolute; 
     z-index: 999;
-    right: 30px;
+    right: 0px;
     top:-16px;
   }
 
@@ -119,6 +138,11 @@ body{
   .zone-end{
     background-color: #008B95;
     color:white;
+  }
+  ul.prices{
+    li:not(:last-child){
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -222,7 +246,6 @@ ul.bp{
   .zone-end{
     background-color: $green;
     color:white;
-    text-align: center;    
     width: 100%;
   }
   h2{
@@ -260,6 +283,7 @@ ul.bp{
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
+  padding-bottom: 20px;
 }
 
 
