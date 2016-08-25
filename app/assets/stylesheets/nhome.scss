@@ -1,6 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 @import "_variables";
 
+
 body{
   margin: 0;
   padding: 0;
@@ -13,8 +14,48 @@ body{
   border:1px solid #efefef;
 }
 
+@keyframes fadeInRotate{
+ from { opacity:0;width: 0;height: 0;transform:rotate(0deg)}
+ to   { opacity:1; transform:rotate(360deg)}
+}
+
+@keyframes reduce{
+ from { width:0; }
+ to   { width:40px; }
+}
+
+@keyframes simpleFadeIn{
+ from { opacity:0; }
+ to   { opacity:1; }
+}
+
+@keyframes pictureZoneFadeIn{
+ from { opacity:0; }
+ 75% {opacity: 1;}
+ to   { opacity:0.75; }
+}
+
+.zone{
+  &.doAnimation{
+    .zone-action{
+      animation: reduce 0.15s ease-in;
+      img{
+        animation: fadeInRotate 0.5s ease-in-out;
+      }
+    }
+    .zone-picture{
+      img{
+        animation: pictureZoneFadeIn 1s ease-in-out;
+      }
+    }
+  }
+}
+
 .header{
   height: 52px;
+  margin: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .zone-full{
   width: 100%;
@@ -37,9 +78,7 @@ body{
   .zone-picture, .zone-text{
     width: 50%;
   }
-  .zone-picture{
-    background-color: #efefef;
-  }
+
   margin-bottom: 20px;
 }
 .inside-zone{
@@ -59,7 +98,7 @@ body{
   .zone-end{
     background-color: $green;
     color:white;
-   
+
     h2{
       margin: 0;
     }
@@ -79,11 +118,11 @@ body{
       align-items:flex-end;
       .zone-end{
         width: 100%;
-     display: flex;
-    justify-content:center;
-    .zone-end-text{
-      width: 400px;
-    }        
+        display: flex;
+        justify-content:center;
+        .zone-end-text{
+          width: 400px;
+        }        
       }
     }
   }
@@ -119,19 +158,20 @@ body{
     background-color: white;
     position: relative;
     width: 40px;
+    img{
+      width: 116px;
+      height: 116px;
+      border: 16px solid white;
+      border-radius: 78px;
+      position: absolute; 
+      z-index: 999;
+      right: 0px;
+      top:-16px;
+    }
   }
 
 
-  img{
-    width: 116px;
-    height: 116px;
-    border: 16px solid white;
-    border-radius: 78px;
-    position: absolute; 
-    z-index: 999;
-    right: 0px;
-    top:-16px;
-  }
+  
 
 }
 .zone4{
@@ -271,16 +311,15 @@ ul.bp{
 .zone7{
   .zone-text.action-area{
     justify-content:center;
-   .zone-bottom{
-    align-items:flex-start;
-    flex-grow:0;
-  }
-} 
+    .zone-bottom{
+      align-items:flex-start;
+      flex-grow:0;
+    }
+  } 
 }
 
 .inside-zone{
   max-width: 600px;
-  width: 100%;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
@@ -289,4 +328,46 @@ ul.bp{
 
 .footer{
   background-color: #2B312F;
+}
+
+
+.zone{
+  &:not(.doAnimation){
+   .zone-end-text h2{
+    opacity: 0;
+  }
+  .zone-action{
+    width: 0;
+    img{
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  }
+  .zone-picture{
+    img{
+      opacity: 0;
+    }
+  }
+}
+}
+
+.zone-picture{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  &>div{
+    text-align: center;
+  }
+  img{
+    width: 94%;
+    opacity: 0.75;
+    transition:0.25s opacity;
+    transition-timing-function: ease-in-out;
+
+    border:1px solid #efefef;
+    // &:hover{
+    //   opacity: 1;
+    // }
+  }
 }

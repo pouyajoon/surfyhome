@@ -5,32 +5,39 @@ $((function () {
         'use strict';
         console.log('ready');
 
-        var controller, slides, i;
-
-
-        // init controller
-        // controller = new ScrollMagic.Controller({
-        //     // globalSceneOptions: {
-        //     //     triggerHook: 'onLeave'
-        //     // }
-        // });
+        var controller;
 
         controller = new ScrollMagic.Controller({
             globalSceneOptions: {
-                duration: 200
+                duration: 500
             }
         });
 
 
-        var zone = $('#zone1 .zone-action img');
+        function setSceen(number, offset) {
+            var zone, scene;
+            zone = '.zone' + number;
+            scene = new ScrollMagic.Scene({
+                triggerElement: zone,
+                offset: offset || 0
+            });
+            // .addIndicators(); // add indicators (requires plugin)
+            scene.on("enter", function () {
+                $(zone + ' .zone-end-text h2').addClass('animated bounceInLeft');
+                $(zone).addClass('doAnimation');
+            });
+            controller.addScene(scene);
 
+        }
 
-        new ScrollMagic.Scene({
-                triggerElement: "#img1"
-            })
-            .setClassToggle("#zone1", "active") // add class toggle
-            .addIndicators() // add indicators (requires plugin)
-            .addTo(controller);
+        setSceen(1);
+        setSceen(2);
+        setSceen(3);
+        setSceen(4);
+        setSceen(5);
+        setSceen(6);
+        setSceen(7, -250);
+
         // build scene
         // var scene = new ScrollMagic.Scene({
         //         triggerElement: zone
