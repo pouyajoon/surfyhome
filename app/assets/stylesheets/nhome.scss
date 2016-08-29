@@ -55,11 +55,6 @@ $total-width:1098px;
     from {
         opacity: 0;
     }
-
-    75% {
-        opacity: 1;
-    }
-
     to {
         opacity: 0.75;
     }
@@ -220,7 +215,7 @@ ul.colorized-green-dark{
         .zone-bottom {
             flex-grow: 1;
             display: flex;
-            align-items: flex-end;
+            align-items: flex-start;
 
             .zone-end {
                 width: 100%;
@@ -257,6 +252,67 @@ ul.colorized-green-dark{
 .zone-end {
     padding: 30px 10px;
 }
+
+
+.zone{
+    .zone-end{
+        position: relative;
+    }
+    .zone-end::after{
+        position: absolute;
+        top:116px;
+        left: 0;
+        width: 600px;
+        text-align: left;
+        z-index: -1;
+        height: 400px;
+        content: ' ';
+    }
+}
+
+.zone1{
+    .zone-end::after{
+        background: url('/assets/bg/bg-order-chat.png') no-repeat;
+        opacity: 0.25;
+    }
+}
+
+.zone2{
+    .zone-end::after{
+        background: url('/assets/bg/bg-zone2-end2.png') no-repeat;
+        opacity: 0.25;
+        background-position: -600px 0;
+        right: 0;
+        left:initial;
+    }
+}
+
+.zone4{
+    .zone-end::after{
+        background: url('/assets/bg/bg-university.png') no-repeat;
+        opacity: 0.25;
+        background-position: -600px 0;
+        right: 0;
+        left:initial;
+    }
+}
+
+.zone7{
+    .zone-end::before{
+        position: absolute;
+        bottom: 116px;
+        left: 0;
+        width: 600px;
+        text-align: left;
+        z-index: -1;
+        height: 400px;
+        content: ' ';        
+        background: url('/assets/bg/bg-contact-us.png') no-repeat;
+        background-position: 0 -200px;
+        opacity: 0.25;
+    }
+}
+
 
 .zone1, .zone7 {
     .zone-end {
@@ -304,6 +360,7 @@ ul.colorized-green-dark{
 .zone3 {
     .section-4 {
         display: flex;
+        justify-content:center;
 
         & > div {
             width: 226px;
@@ -333,14 +390,26 @@ ul.colorized-green-dark{
                 padding: 10px;
                 width: $total-width;
                 text-align: left;
-                // bottom:0;
-                // width: 100%;
-
                 z-index: -1;
-                background-color: red;
                 height: 600px;
                 content: ' ';
+            }
+
+            .bg-red-img::after{
                 background: url('/assets/bg/bg-red.png') no-repeat;
+                width: calc(154px / 2 + 4 * 236px - 20px);
+            }
+            .bg-green-img::after{
+                background: url('/assets/bg/bg-green.png') no-repeat;
+                width: calc(154px / 2 + 226px - 30px)
+            }
+            .bg-cyan-img::after{
+                background: url('/assets/bg/bg-cyan.png') no-repeat;
+                width: calc(154px / 2 + 2 * 226px - 10px)
+            }
+            .bg-green-dark-img::after{
+                background: url('/assets/bg/bg-green-dark.png') no-repeat;
+                width: calc(154px / 2 + 3 * 226px + 10px)
             }
 
 
@@ -453,20 +522,9 @@ ul.bp {
     }
 }
 
-
-.zone1 {
-    .zone-text {
-        .zone-bottom {
-            align-items: stretch;
-        }
-    }
-}
-
-
 .zone7 {
     .zone-text.action-area {
         justify-content: center;
-
         .zone-bottom {
             align-items: flex-start;
             flex-grow: 0;
@@ -660,7 +718,9 @@ div.company{
                 }
 
                 .title::after{
-                    display: none;
+                    // display: none;
+                    top:88px;
+                    opacity: 0.25;
                 }
 
 
@@ -688,11 +748,29 @@ div.company{
     }
 }
 
+.zone7{
+    .inside-zone{
+        text-align: center;
+        width: 100%;
+    }
+}
+
 .zone5 ul.references {
     flex-direction: column;
-
+    margin:0;
+    border:none;
+    margin-bottom: 20px;
+    
+    li:first-child{
+        border-top: 1px solid #efefef;
+    }
     li {
+        height: 105px;
+        padding: 0;
+        margin:0;
+        align-items:center;
         justify-content: center;
+        border-bottom: 1px solid #efefef;
     }
 }
 
