@@ -15,6 +15,7 @@ $total-width:1098px;
     width: $total-width;
     margin: 0 auto;
     border: 1px solid #efefef;
+    overflow-x: hidden;
 }
 
 @keyframes fadeInRotate {
