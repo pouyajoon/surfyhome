@@ -1,11 +1,17 @@
 /*global $, ScrollMagic, document*/
 $((function () {
 
+
+
     function startup() {
         'use strict';
         console.log('ready');
 
+
+
+
         var controller;
+
 
         controller = new ScrollMagic.Controller({
             globalSceneOptions: {
@@ -62,8 +68,29 @@ $((function () {
         //         .addIndicators() // add indicators (requires plugin)
         //         .addTo(controller);
         // }
+
+        function setupAnchorScroll() {
+            var $root = $('html, body');
+            $('.menu a').click(function (e) {
+                e.preventDefault();
+                $root.animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 500);
+                return false;
+            });
+        }
+
+        setupAnchorScroll();
+
+
+        console.log($('a'));
+        $('a').on('click', function(){
+            console.log('click');
+            $('.menu').toggleClass('visible'); 
+        });
+
     }
 
-    setTimeout(startup, 0);
+    setTimeout(startup, 100);
 
 }()));
