@@ -1,14 +1,11 @@
 /*global $, ScrollMagic, document*/
-$((function () {
+$((function() {
 
 
 
     function startup() {
         'use strict';
         console.log('ready');
-
-
-
 
         var controller;
 
@@ -28,7 +25,7 @@ $((function () {
                 offset: offset || 0
             });
             // .addIndicators(); // add indicators (requires plugin)
-            scene.on("enter", function () {
+            scene.on('enter', function() {
                 // $(zone + ' .zone-text h1').addClass('animated bounceInRight');
                 $(zone + ' .zone-end-text h2').addClass('animated bounceInLeft');
                 $(zone).addClass('doAnimation');
@@ -71,7 +68,7 @@ $((function () {
 
         function setupAnchorScroll() {
             var $root = $('html, body');
-            $('.menu a').click(function (e) {
+            $('.menu a').click(function(e) {
                 e.preventDefault();
                 $root.animate({
                     scrollTop: $($.attr(this, 'href')).offset().top
@@ -82,12 +79,53 @@ $((function () {
 
         setupAnchorScroll();
 
-
-        console.log($('a'));
-        $('a').on('click', function(){
-            console.log('click');
-            $('.menu').toggleClass('visible'); 
+        $('a').on('click', function() {
+            $('.menu').toggleClass('visible');
         });
+
+        $('.zone1 .zone-end').on('click', function(e) {
+            $('.zone1 .zone-bottom').addClass('fill-contact');
+            e.preventDefault();
+            return false;
+        });
+
+        $('.cancel-contact-form').on('click', function(e) {
+            $('.zone1 .zone-bottom').removeClass('fill-contact');
+            e.preventDefault();
+            return false;
+        });
+
+        $('body').click('on', function() {
+            if ($('.zone1 .zone-bottom').hasClass('fill-contact')) {
+                $('.zone1 .zone-bottom').removeClass('fill-contact');
+            }
+        });
+
+        $('.send-contact-form').on('click', function(e) {
+            var d = {
+                'authenticity_token': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                'contact[firstname]': $('#firstname').val(),
+                'contact[lastname]': $('#lastname').val(),
+                'contact[email]': $('#email').val(),
+                'contact[telephone]': $('#telephone').val(),
+                'contact[title]': $('#title').val(),
+                'contact[comments]': $('#comments').val()
+            };
+            $('.send-contact-form').prop('disable', true);
+            $.post('/contacts.json', d).success(function(res) {
+                console.log(res);
+                $('.send-contact-form').prop('disable', false);
+                $('.fill-contact-form').html('<h1>Merci nous allons revenir vers vous rapidement.</h1>');
+                setTimeout(function() {
+                    $('.zone1 .zone-bottom').removeClass('fill-contact');
+                }, 1500);
+            });
+
+            e.preventDefault();
+            return false;
+        });
+
+
 
     }
 

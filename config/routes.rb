@@ -1,11 +1,17 @@
 Surfyphome::Application.routes.draw do
+
+  resources :contacts
+
+  resource :contacts
+  
   get "pages/home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'pages#home'
+  # root 'pages#home'
+  root 'pages#nhome'
 
 
   get 'solutions' => 'pages#solutions'
@@ -15,7 +21,7 @@ Surfyphome::Application.routes.draw do
 
 
   get 'amp' => "amp_pages#home"
-  get 'new' => "pages#nhome"
+  # get 'new' => "pages#nhome"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

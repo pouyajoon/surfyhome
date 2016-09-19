@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 development:
-  host: pouyam.casewise.local  
+  # host: pouyam.casewise.local  
   adapter: postgresql
   encoding: unicode
   database: surfyhome_development
