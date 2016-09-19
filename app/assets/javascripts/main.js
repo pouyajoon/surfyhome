@@ -5,7 +5,7 @@ $((function() {
 
     function startup() {
         'use strict';
-        console.log('ready');
+        // console.log('ready');
 
         var controller;
 
