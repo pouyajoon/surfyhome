@@ -27,64 +27,10 @@
           <h2>Je suis intéressé(e)</h2>
           <h2>par le pack de lancement</h2>
         </div>
-        <div class="fill-contact-form">
-          <form action="#">
-            <ul>
-              <li>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="firstname">
-                  <label class="mdl-textfield__label" for="firstname">Prénom</label>
-                </div>
-              </li>
-              <li>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="lastname">
-                  <label class="mdl-textfield__label" for="lastname">Nom</label>
-                </div>
-              </li>
-              <li>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="email">
-                  <label class="mdl-textfield__label" for="email">E-Mail</label>
-                </div>
-              </li>
-              <li>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="telephone">
-                  <label class="mdl-textfield__label" for="telephone">Téléphone</label>
-                </div>
-              </li>
-              <li>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="title">
-                  <label class="mdl-textfield__label" for="title">Titre</label>
-                </div>
-              </li>
-              <li>
-                <div class="mdl-textfield mdl-js-textfield">
-                  <textarea class="mdl-textfield__input" type="text" rows= "3" id="comments" ></textarea>
-                  <label class="mdl-textfield__label" for="comments">Commentaires</label>
-                </div>
-              </li>
-              <li>
-                <!-- Colored raised button -->
-<!-- Primary-colored flat button -->
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored send-contact-form">
-  Envoyer
-</button>
 
-<!-- Icon button -->
-<button class="mdl-button mdl-js-button mdl-button--icon cancel-contact-form">
-  <i class="fa fa-times-circle"></i>
-</button>
+        <%= render 'zones/contact_form' %>
 
 
-              </li>
-            </ul>
-
-
-          </form>
-        </div>
       </div>
       <div class="zone-action"><img src="/assets/icons/order_chat.png"></div>
     </div>

@@ -1,0 +1,59 @@
+<div class="fill-contact-form" ng-controller="FormController">
+  <h1 ng-if="form.sent">Merci nous allons revenir vers vous rapidement.</h1>
+
+  <form action="#" ng-if="form.sent === false">
+    <ul>
+      <li class="name">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input ng-model="contact.firstname" class="mdl-textfield__input" type="text" required>
+          <label class="mdl-textfield__label" for="firstname">Prénom</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input ng-model="contact.lastname" class="mdl-textfield__input" type="text" required>
+          <label class="mdl-textfield__label" for="lastname">Nom</label>
+        </div>
+      </li>
+      <li>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input  ng-model="contact.company" class="mdl-textfield__input" type="text" required>
+          <label class="mdl-textfield__label" for="Entreprise">Entreprise</label>
+        </div>
+      </li>
+      <li>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input ng-model="contact.title" class="mdl-textfield__input" type="text" required>
+          <label class="mdl-textfield__label" for="title">Titre</label>
+        </div>
+      </li>
+      <li>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input  ng-model="contact.email" class="mdl-textfield__input" type="email" required>
+          <label class="mdl-textfield__label" for="email">E-Mail</label>
+        </div>
+      </li>
+      <li>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input  ng-model="contact.telephone" class="mdl-textfield__input" type="tel" required>
+          <label class="mdl-textfield__label" for="telephone">Téléphone</label>
+        </div>
+      </li>
+      <li>
+        <div class="mdl-textfield mdl-js-textfield">
+          <textarea  ng-model="contact.comments" class="mdl-textfield__input" type="text" rows= "3"></textarea>
+          <label class="mdl-textfield__label" for="comments">Commentaires</label>
+        </div>
+      </li>
+      <li>
+        <!-- Colored raised button -->
+        <!-- Primary-colored flat button -->
+        <button ng-click="contactSubmit()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored send-contact-form" ng-disabled="form.disable">
+        Envoyer
+        </button>
+        <!-- Icon button -->
+        <button class="mdl-button mdl-js-button mdl-button--icon cancel-contact-form">
+        <i class="fa fa-times-circle"></i>
+        </button>
+      </li>
+    </ul>
+  </form>
+</div>

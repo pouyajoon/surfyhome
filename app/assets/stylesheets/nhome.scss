@@ -616,7 +616,7 @@ $footerBgColor:#2B312F;
             text-decoration: underline;
         }
     }
-        visibility: hidden;
+    visibility: hidden;
 
     &.visible{
         visibility: visible;
@@ -722,10 +722,11 @@ div.company{
 }
 
 
-.zone1 .fill-contact-form{
+.fill-contact-form{
     opacity: 0;
     visibility: hidden;
     position: absolute;
+
 }
 
 .zone1 .zone-text .zone-bottom
@@ -737,7 +738,7 @@ div.company{
 }
 
 
-.zone1 .zone-text .zone-bottom.fill-contact
+.zone-text .zone-bottom.fill-contact
 {
     width: 600px;
     top: 60px;
@@ -783,39 +784,45 @@ div.company{
     }
 
     .fill-contact-form{
-
-form{
-    width: 100%;
-    ul {
-            margin: 0;padding: 0;width: 100%;
-            li{
-                list-style: none;
-                text-align: center;
-                width: 100%;
-
-                .send-contact-form{
-                    margin-right: 20px;
+        form{
+            width: 100%;
+            ul {
+                margin: 0;padding: 0;width: 100%;
+                li.name{
+                    div {
+                        width: 40%;
+                        display: inline-block;
+                    }
                 }
-                button{
+
+                li{
+                    list-style: none;
+                    text-align: center;
+                    width: 100%;
+
+                    .send-contact-form{
+                        margin-right: 20px;
+                    }
+                    button{
                     // width: 50%;
                     // display: inline-block;
                 }
             }
         }
-}
-        
-        opacity: 1;
-        visibility: visible;
-        position: relative;
-        width: 100%;
-        .mdl-textfield{
-            width: 80%;
+    }
+
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    width: 100%;
+    .mdl-textfield{
+        width: 80%;
             // padding-bottom: 10px;
         }
 
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
-}
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+        }
         input{
             border-bottom-color:#efefef;
         }
@@ -826,11 +833,13 @@ input:-webkit-autofill {
 
 }
 
-.zone1 .zone-end-text{
-    &:hover{
-        cursor: pointer;
+.zone1, .zone7{
+    .zone-end-text{
+        &:hover{
+            cursor: pointer;
+        }
     }
-}
+} 
 
 
 
@@ -963,7 +972,7 @@ input:-webkit-autofill {
 }
 
 
-.zone1 .zone-text .zone-bottom.fill-contact
+.zone-bottom.fill-contact
 {
     width: 100%;
     height: 520px;
