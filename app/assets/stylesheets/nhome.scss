@@ -392,7 +392,7 @@ ul.colorized-green-dark{
             .text-area {
                 background-color: #efefef;
                 padding: 10px 0;
-                min-height: 246px;
+                min-height: 288px;
             }
 
             .title {
@@ -729,12 +729,14 @@ div.company{
 
 }
 
-.zone1 .zone-text .zone-bottom
-{
+.zone1, .zone7{
+   .zone-text .zone-bottom
+   {
     @include transition(0.5s);    
     .zone-end{
         @include transition(0.5s);    
     }
+}
 }
 
 
@@ -759,6 +761,7 @@ div.company{
     }
 
     .zone-end{
+        box-shadow: 0px 1px 20px #efefef;
         height: 100%;
         justify-content: flex-start;
         flex-direction: column;
@@ -840,94 +843,94 @@ div.company{
         //     label.mdl-textfield__label{
         //     top:12px;
         // }
-}
-.zone1, .zone7{
-    .zone-end-text{
-        &:hover{
-            cursor: pointer;
-        }
     }
-} 
-
-h5.error-message{
-    color:#B02E3E;
-    margin: 0;
-    margin-bottom: 20px;
-}
-
-
-@media screen and (min-width: 240px) and (max-width: 1023px) {
-
-    .main-area {
-        width: 100%;
-        border: none;
-    }
-
-    .header {
-        flex-direction: column;
-        height: 90px;
-        margin-left: auto;
-        margin-right: auto;
-
-    }
-
-    h1 {
-        margin-top: 0;
-        text-align: center;
-    }
-
-    .half-circle{
-        display: none;
-    }
-    
-
-    .zone {
-        .zone-text {
-
-
-
-            margin-bottom: 20px;
-
-            .inside-zone{
-                margin-left: inherit;
-            }
-
-
-            .title {
-                width: 100%;
+    .zone1, .zone7{
+        .zone-end-text{
+            &:hover{
+                cursor: pointer;
             }
         }
+    } 
 
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        min-height: 426px;
+    h5.error-message{
+        color:#B02E3E;
+        margin: 0;
+        margin-bottom: 20px;
+    }
 
-        .zone-picture, .zone-text {
+
+    @media screen and (min-width: 240px) and (max-width: 1023px) {
+
+        .main-area {
             width: 100%;
+            border: none;
         }
-    }
 
-    .zone1, .zone6 {
-        flex-direction: column-reverse;
-    }
-
-
-    .zone3 {
-        .section-4 {
+        .header {
             flex-direction: column;
+            height: 90px;
+            margin-left: auto;
+            margin-right: auto;
 
-            & > div {
-                margin: 10px 0;
-                width: 100%;
-                padding: 0;
+        }
 
-                .title {
-                    padding: 0;
-                    margin-bottom: 20px;
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .half-circle{
+            display: none;
+        }
+
+
+        .zone {
+            .zone-text {
+
+
+
+                margin-bottom: 20px;
+
+                .inside-zone{
+                    margin-left: inherit;
                 }
 
-                .title::after{
+
+                .title {
+                    width: 100%;
+                }
+            }
+
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 426px;
+
+            .zone-picture, .zone-text {
+                width: 100%;
+            }
+        }
+
+        .zone1, .zone6 {
+            flex-direction: column-reverse;
+        }
+
+
+        .zone3 {
+            .section-4 {
+                flex-direction: column;
+
+                & > div {
+                    margin: 10px 0;
+                    width: 100%;
+                    padding: 0;
+
+                    .title {
+                        padding: 0;
+                        margin-bottom: 20px;
+                    }
+
+                    .title::after{
                     // display: none;
                     top:88px;
                     opacity: 0.25;
@@ -949,7 +952,7 @@ h5.error-message{
         .zone-text{
             .zone-bottom{
                 .zone-end{
-                 .zone-end-text{
+                   .zone-end-text{
                     text-align: center;
                     width: 100%;
                 }
