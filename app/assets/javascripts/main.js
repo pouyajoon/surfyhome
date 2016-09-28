@@ -67,11 +67,11 @@
       });
 
 
-      $('.cancel-contact-form').on('click', function(e) {
-        $('.fill-contact').removeClass('fill-contact');
-        e.preventDefault();
-        return false;
-      });
+      // $('.cancel-contact-form').on('click', function(e) {
+      //   $('.fill-contact').removeClass('fill-contact');
+      //   e.preventDefault();
+      //   return false;
+      // });
 
       $('body').click('on', function() {
         $('.fill-contact').removeClass('fill-contact');
@@ -101,6 +101,9 @@
       sent: false
     };
 
+    $scope.closeForm = function() {
+      $('.fill-contact').removeClass('fill-contact');
+    };
     $scope.contactSubmit = function(form) {
       $scope.valid = form.$valid;
       if (form.$valid === false) {
