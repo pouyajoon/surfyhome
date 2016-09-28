@@ -101,7 +101,8 @@
       sent: false
     };
 
-    $scope.closeForm = function() {
+    $scope.closeForm = function($event) {
+      $event.stopPropagation();$event.preventDefault();
       $('.fill-contact').removeClass('fill-contact');
     };
     $scope.contactSubmit = function(form) {
@@ -110,12 +111,9 @@
         return;
       }
       $scope.form.disable = true;
-      console.log('send contact', $scope.contact);
       $http.post('/contacts.json', $scope.contact).success(function(res) {
-        console.log(res);
         $scope.form.disable = false;
         $scope.form.sent = true;
-        // $('.fill-contact-form').html('<h1>Merci nous allons revenir vers vous rapidement.</h1>');
         setTimeout(function() {
           $('.zone1 .zone-bottom').removeClass('fill-contact');
         }, 2000);

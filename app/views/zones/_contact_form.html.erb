@@ -45,14 +45,13 @@
       </li>
       <li>
         <h5 class="error-message" ng-if="valid === false">Merci de renseigner tous les champs</h5>
-
         <!-- Colored raised button -->
         <!-- Primary-colored flat button -->
         <button ng-click="contactSubmit(form)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored send-contact-form" ng-disabled="form.disable">
         Envoyer
         </button>
         <!-- Icon button -->
-        <button class="mdl-button mdl-js-button mdl-button--icon cancel-contact-form" ng-click="closeForm()">
+        <button class="mdl-button mdl-js-button mdl-button--icon cancel-contact-form" ng-click="closeForm($event)">
         <i class="fa fa-times-circle"></i>
         </button>
       </li>
