@@ -1,7 +1,7 @@
 <div class="fill-contact-form" ng-controller="FormController">
   <h1 ng-if="form.sent">Merci nous allons revenir vers vous rapidement.</h1>
 
-  <form action="#" ng-if="form.sent === false">
+  <form action="#" ng-if="form.sent === false" name="form">
     <ul>
       <li class="name">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -44,9 +44,11 @@
         </div>
       </li>
       <li>
+        <h5 class="error-message" ng-if="valid === false">Merci de renseigner tous les champs</h5>
+
         <!-- Colored raised button -->
         <!-- Primary-colored flat button -->
-        <button ng-click="contactSubmit()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored send-contact-form" ng-disabled="form.disable">
+        <button ng-click="contactSubmit(form)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored send-contact-form" ng-disabled="form.disable">
         Envoyer
         </button>
         <!-- Icon button -->

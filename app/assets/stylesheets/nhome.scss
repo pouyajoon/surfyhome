@@ -745,7 +745,7 @@ div.company{
     left: 50%;
     margin-top: -100px;
     margin-left: -300px;
-    height: 520px;
+    height: 580px;
     z-index: 999;
 
     &::after{
@@ -828,11 +828,19 @@ div.company{
         }
         label{
             color:#efefef;
+            font-size: 12px;
         }
     }
 
 }
 
+
+.mdl-textfield{
+        // padding: 10px 0;
+        //     label.mdl-textfield__label{
+        //     top:12px;
+        // }
+}
 .zone1, .zone7{
     .zone-end-text{
         &:hover{
@@ -841,6 +849,11 @@ div.company{
     }
 } 
 
+h5.error-message{
+    color:#B02E3E;
+    margin: 0;
+    margin-bottom: 20px;
+}
 
 
 @media screen and (min-width: 240px) and (max-width: 1023px) {

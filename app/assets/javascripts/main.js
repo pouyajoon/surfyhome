@@ -100,7 +100,12 @@
       disable: false,
       sent: false
     };
-    $scope.contactSubmit = function() {
+
+    $scope.contactSubmit = function(form) {
+      $scope.valid = form.$valid;
+      if (form.$valid === false) {
+        return;
+      }
       $scope.form.disable = true;
       console.log('send contact', $scope.contact);
       $http.post('/contacts.json', $scope.contact).success(function(res) {
