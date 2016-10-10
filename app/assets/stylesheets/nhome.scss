@@ -872,10 +872,15 @@ h5.error-message{
 @media screen and (min-width: 240px) and (max-width: 1023px) {
 
 .footer{
+
+    .social-icons{
+    padding: 0;
+    }
     .footer-image{
     flex-direction:column;
 
     div{
+        width: 100%;
         margin: 5px 0;
         img:first-child{
             width: auto;
