@@ -16,6 +16,7 @@
 #
 development:
   # host: pouyam.casewise.local  
+  host: 127.0.0.1
   adapter: postgresql
   encoding: unicode
   database: surfyhome_development

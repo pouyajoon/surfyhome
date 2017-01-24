@@ -297,6 +297,10 @@ ul.colorized-green-dark{
         background: url('/assets/bg/bg-order-chat.png') no-repeat;
         opacity: 0.25;
     }
+
+    .zone1-carousel{
+        width:94%;
+    }
 }
 
 .zone2{
@@ -737,6 +741,18 @@ div.company{
         transition: 0.25s opacity;
         transition-timing-function: ease-in-out;
         border: 1px solid #efefef;
+    }
+
+    div.video-zone{
+        width:94%;
+        height: 477px;
+
+    iframe{
+        width:100%;
+        height: 477px;
+
+    }
+
     }
 }
 

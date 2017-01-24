@@ -4,6 +4,8 @@
 
   $((function() {
 
+
+
     function startup() {
       var controller;
       controller = new ScrollMagic.Controller({
@@ -11,6 +13,18 @@
           duration: 500
         }
       });
+
+      $('.zone1-carousel').slick({
+        infinite: true,
+        dots: true,
+        // centerMode: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+      });
+
 
       function setSceen(number, offset) {
         var zone, scene;
@@ -102,7 +116,8 @@
     };
 
     $scope.closeForm = function($event) {
-      $event.stopPropagation();$event.preventDefault();
+      $event.stopPropagation();
+      $event.preventDefault();
       $('.fill-contact').removeClass('fill-contact');
     };
     $scope.contactSubmit = function(form) {
