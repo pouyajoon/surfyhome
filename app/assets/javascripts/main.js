@@ -1,8 +1,8 @@
 /*global $, ScrollMagic, document, angular*/
-(function() {
+(function () {
   'use strict';
 
-  $((function() {
+  $((function () {
 
 
 
@@ -34,7 +34,7 @@
           offset: offset || 0
         });
         // .addIndicators(); // add indicators (requires plugin)
-        scene.on('enter', function() {
+        scene.on('enter', function () {
           // $(zone + ' .zone-text h1').addClass('animated bounceInRight');
           $(zone + ' .zone-end-text h2').addClass('animated bounceInLeft');
           $(zone).addClass('doAnimation');
@@ -53,7 +53,7 @@
 
       function setupAnchorScroll() {
         var $root = $('html, body');
-        $('.menu a').click(function(e) {
+        $('.menu a').click(function (e) {
           e.preventDefault();
           $root.animate({
             scrollTop: $($.attr(this, 'href')).offset().top
@@ -64,17 +64,17 @@
 
       setupAnchorScroll();
 
-      $('a').on('click', function() {
+      $('a').on('click', function () {
         $('.menu').toggleClass('visible');
       });
 
-      $('.zone1 .zone-end').on('click', function(e) {
+      $('.zone1 .zone-end').on('click', function (e) {
         $('.zone1 .zone-bottom').addClass('fill-contact');
         e.preventDefault();
         return false;
       });
 
-      $('.zone7 .zone-end').on('click', function(e) {
+      $('.zone7 .zone-end').on('click', function (e) {
         $('.zone7 .zone-bottom').addClass('fill-contact');
         e.preventDefault();
         return false;
@@ -87,7 +87,7 @@
       //   return false;
       // });
 
-      $('body').click('on', function() {
+      $('body').click('on', function () {
         $('.fill-contact').removeClass('fill-contact');
       });
     }
@@ -98,38 +98,38 @@
 
 
   var app = angular.module('SurfyHomeApp', []);
-  app.run(function() {
+  app.run(function () {
     return false;
   });
 
   app.config(['$httpProvider',
-    function(provider) {
+    function (provider) {
       provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
     }
   ]);
 
-  app.controller('FormController', function($scope, $http) {
+  app.controller('FormController', function ($scope, $http) {
     $scope.contact = {};
     $scope.form = {
       disable: false,
       sent: false
     };
 
-    $scope.closeForm = function($event) {
+    $scope.closeForm = function ($event) {
       $event.stopPropagation();
       $event.preventDefault();
       $('.fill-contact').removeClass('fill-contact');
     };
-    $scope.contactSubmit = function(form) {
+    $scope.contactSubmit = function (form) {
       $scope.valid = form.$valid;
       if (form.$valid === false) {
         return;
       }
       $scope.form.disable = true;
-      $http.post('/contacts.json', $scope.contact).success(function(res) {
+      $http.post('/contacts.json', $scope.contact).success(function (res) {
         $scope.form.disable = false;
         $scope.form.sent = true;
-        setTimeout(function() {
+        setTimeout(function () {
           $('.zone1 .zone-bottom').removeClass('fill-contact');
         }, 2000);
       });
