@@ -333,6 +333,9 @@ ul.colorized-green-dark{
         right: 0;
         left:initial;
     }
+    .zone4-carousel{
+        width:94%;
+    }
 }
 
 .zone7{
@@ -880,15 +883,27 @@ div.company{
 }
 
 
-.mdl-textfield{
-}
-.zone1, .zone7{
-    .zone-end-text{
-        &:hover{
-            cursor: pointer;
+.hbspt-form{
+    width: 100%;
+    padding: 16px;
+    background-color: #008B95;
+    form{
+        margin: 0 auto;
+        max-width: 600px;
+
+        label span{
+            color:white;
         }
+    
     }
-} 
+}
+// .zone1, .zone7{
+//     .zone-end-text{
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+// } 
 
 h5.error-message{
     color:#B02E3E;

@@ -14,7 +14,7 @@
         }
       });
 
-      $('.zone1-carousel').slick({
+      $('.zone1-carousel, .zone4-carousel').slick({
         infinite: true,
         dots: true,
         // centerMode: true,
