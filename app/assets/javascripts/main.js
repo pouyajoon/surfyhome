@@ -68,17 +68,17 @@
         $('.menu').toggleClass('visible');
       });
 
-      $('.zone1 .zone-end').on('click', function (e) {
-        $('.zone1 .zone-bottom').addClass('fill-contact');
-        e.preventDefault();
-        return false;
-      });
+      // $('.zone1 .zone-end').on('click', function (e) {
+      //   $('.zone1 .zone-bottom').addClass('fill-contact');
+      //   e.preventDefault();
+      //   return false;
+      // });
 
-      $('.zone7 .zone-end').on('click', function (e) {
-        $('.zone7 .zone-bottom').addClass('fill-contact');
-        e.preventDefault();
-        return false;
-      });
+      // $('.zone7 .zone-end').on('click', function (e) {
+      //   $('.zone7 .zone-bottom').addClass('fill-contact');
+      //   e.preventDefault();
+      //   return false;
+      // });
 
 
       // $('.cancel-contact-form').on('click', function(e) {
