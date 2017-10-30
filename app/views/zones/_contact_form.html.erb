@@ -1,7 +1,24 @@
-<div class="fill-contact-form" ng-controller="FormController">
-  <h1 ng-if="form.sent">Merci nous allons revenir vers vous rapidement.</h1>
 
-  <form action="#" ng-if="form.sent === false" name="form">
+<div class="fill-contact-form" ng-controller="FormController">
+  <%# <h1 ng-if="form.sent">Merci nous allons revenir vers vous rapidement.</h1> %>
+
+  <!--[if lte IE 8]>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+      portalId: '3276839',
+      formId: 'e7f17b54-f199-468f-aa35-7c88c6c64da9'
+    });
+  </script>
+
+  <button class="mdl-button mdl-js-button mdl-button--icon cancel-contact-form" ng-click="closeForm($event)">
+    <i class="fa fa-times-circle"></i>
+  </button>
+
+
+  <%# <form action="#" ng-if="form.sent === false" name="form">
     <ul>
       <li class="name">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -56,5 +73,5 @@
         </button>
       </li>
     </ul>
-  </form>
+  </form> %>
 </div>
